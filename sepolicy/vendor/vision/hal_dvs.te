@@ -19,3 +19,6 @@ init_daemon_domain(hal_dvs_default)
 set_prop(hal_dvs_server, vendor_dolbyv_prop)
 binder_use(hal_dvs_default)
 hal_server_domain(hal_dvs_default, hal_dvs)
+
+add_hwservice(hal_dvs_server, hal_dvs_hwservice)
+allow hal_dvs_client hal_dvs_hwservice:hwservice_manager find;
